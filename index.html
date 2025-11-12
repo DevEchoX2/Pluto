@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ArrowProxy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000; /* black background */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Tabs bar */
+    #tabs {
+      display: flex;
+      background: #111;
+      padding: 6px 10px;
+      overflow-x: auto;
+      align-items: flex-end;
+      border-bottom: 2px solid #ffeb3b; /* yellow accent */
+    }
+    .tab {
+      background: #222;
+      padding: 8px 14px; /* smaller padding */
+      margin-right: 4px;
+      border-radius: 10px 10px 0 0; /* rounded like Chrome */
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      color: #fff;
+      font-size: 13px; /* smaller text */
+      transition: background 0.2s;
+    }
+    .tab:hover {
+      background: #333;
+    }
+    .tab.active {
+      background: #ffeb3b; /* yellow active tab */
+      color: #000;
+      z-index: 2;
+    }
+    .tab span {
+      margin-right: 6px;
+    }
+    .tab button {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #newTab {
+      background: #444;
+      border: none;
+      color: #fff;
+      padding: 8px 14px; /* smaller new tab button */
+      border-radius: 10px 10px 0 0;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-size: 13px;
+    }
+    #newTab:hover {
+      background: #555;
+    }
+
+    /* Address bar */
+    #addressBar {
+      display: flex;
+      background: #000;
+      padding: 12px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    #urlInput {
+      width: 80%; /* long like Chrome */
+      padding: 10px 16px;
+      border: none;
+      border-radius: 30px; /* pill shape */
+      background: #222;
+      color: #fff;
+      font-size: 14px;
+      box-shadow: inset 0 1px 3px rgba(255,255,255,0.2);
+    }
+
+    /* Nav buttons */
+    .navBtn {
+      background: none;
+      border: none;
+      color: #ffeb3b;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .navBtn:hover {
+      color: #fff;
+    }
+
+    /* Shortcut bar (center of page) */
+    #shortcuts {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 25px;
+    }
+    .shortcut {
+      text-align: center;
+      cursor: pointer;
+      color: #ffeb3b;
+      background: #111;
+      border-radius: 50%; /* rounder shortcuts */
+      width: 60px; /* smaller */
+      height: 60px; /* smaller */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .shortcut:hover {
+      background: #333;
+      transform: scale(1.1);
+    }
+    .shortcut i {
+      font-size: 20px;
+    }
+
+    /* Content area */
+    #content {
+      flex: 1;
+      background: #111;
+      padding: 20px;
+      overflow: auto;
+      color: #fff;
+    }
+
+    /* Hidden iframe (kept but not shown) */
+    iframe {
+      display: none;
+    }
+  </style>
+  <!-- Icons via Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Tabs -->
+  <div id="tabs">
+    <div class="tab active"><span>NEW TAB</span><button class="closeBtn">&times;</button></div>
+    <button id="newTab">+</button>
+  </div>
+
+  <!-- Address bar -->
+  <div id="addressBar">
+    <button class="navBtn"><i class="fas fa-arrow-left"></i></button>
+    <button class="navBtn"><i class="fas fa-arrow-right"></i></button>
+    <button class="navBtn"><i class="fas fa-redo"></i></button>
+    <input type="text" id="urlInput" placeholder="Search or enter address">
+  </div>
+
+  <!-- Shortcuts (center of page, icons only) -->
+  <div id="shortcuts">
+    <div class="shortcut"><i class="fas fa-gamepad"></i></div>
+    <div class="shortcut"><i class="fas fa-film"></i></div>
+    <div class="shortcut"><i class="fas fa-th"></i></div>
+  </div>
+
+  <!-- Content -->
+  <div id="content"></div>
+
+  <!-- Hidden iframe (kept for later use) -->
+  <iframe id="browserFrame"></iframe>
+
+  <script>
+    const tabs = document.getElementById('tabs');
+    const newTabBtn = document.getElementById('newTab');
+    const content = document.getElementById('content');
+
+    // Handle tab clicks
+    function setActiveTab(tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      content.innerHTML = "";
+    }
+
+    tabs.addEventListener('click', e => {
+      if (e.target.classList.contains('closeBtn')) {
+        e.target.parentElement.remove();
+      } else if (e.target.classList.contains('tab') || e.target.tagName === 'SPAN') {
+        const tab = e.target.classList.contains('tab') ? e.target : e.target.parentElement;
+        setActiveTab(tab);
+      }
+    });
+
+    // New tab
+    newTabBtn.addEventListener('click', () => {
+      const tab = document.createElement('div');
+      tab.className = 'tab';
+      tab.innerHTML = `<span>NEW TAB</span><button class="closeBtn">&times;</button>`;
+      tabs.insertBefore(tab, newTabBtn);
+      setActiveTab(tab);
+    });
+  </script>
+</body>
+</html>
