@@ -3,7 +3,7 @@ const GAMES = [
   {
     id: "slope",
     title: "Slope",
-    url: "games/slope.html/",
+    url: "https://devechox2.github.io/Geminal/games/slope.html",
     tags: ["arcade", "retro"],
     thumb: "SLOPE"
   },
