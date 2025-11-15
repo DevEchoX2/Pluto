@@ -10,7 +10,7 @@ const GAMES = [
   {
     id: "2048",
     title: "2048",
-    url: "https://example.com/unblocked/2048/index.html",
+    url: "https://devechox2.github.io/Geminal/games/2048.html",
     tags: ["puzzle", "retro"],
     thumb: "2048"
   },
