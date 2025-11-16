@@ -41,7 +41,7 @@ const GAMES = [
     url: "https://devechox2.github.io/Geminal/games/tetrisgba.html",
     tags: ["puzzle", "retro"],
     thumb: "TETRIS"
-  }
+  },
 ];
 
 // State
