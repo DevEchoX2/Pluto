@@ -17,21 +17,21 @@ const GAMES = [
   {
     id: "basketball-stars",
     title: "Basketball Stars",
-    url: "https://example.com/unblocked/basketball-stars/index.html",
+    url: "https://devechox2.github.io/Geminalbasketballstars.html",
     tags: ["sport", "arcade"],
     thumb: "BBALL"
   },
   {
-    id: "cookie-clicker",
-    title: "Cookie Clicker",
-    url: "https://example.com/unblocked/cookie-clicker/index.html",
+    id: "capybara-clicker",
+    title: "Capybara Clicker",
+    url: "https://devechox2.github.io/Geminal/capybaraclicker.html",
     tags: ["idle", "arcade"],
-    thumb: "COOKIE"
+    thumb: "Capybara"
   },
   {
     id: "tetris",
     title: "Tetris",
-    url: "https://example.com/unblocked/tetris/index.html",
+    url: "https://devechox2.github.io/Geminal/tetrisgba.html",
     tags: ["puzzle", "retro"],
     thumb: "TETRIS"
   }
