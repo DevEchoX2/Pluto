@@ -17,7 +17,7 @@ const GAMES = [
   {
     id: "basketball-stars",
     title: "Basketball Stars",
-    url: "https://devechox2.github.io/Geminalbasketballstars.html",
+    url: "https://devechox2.github.io/Geminal/basketballstars.html",
     tags: ["sport", "arcade"],
     thumb: "BBALL"
   },
