@@ -6,13 +6,20 @@ const GAMES = [
     url: "https://devechox2.github.io/Geminal/games/slope.html",
     tags: ["arcade", "retro"],
     thumb: "SLOPE"
+  }, 
+  {
+    id: "slope",
+    title: "Slope",
+    url: "https://devechox2.github.io/Geminal/games/slope.html",
+    tags: ["arcade", "retro"],
+    thumb: "SLOPE"
   },
   {
-    id: "2048",
-    title: "2048",
-    url: "https://devechox2.github.io/Geminal/games/2048.html",
-    tags: ["puzzle", "retro"],
-    thumb: "2048"
+    id: "Aquapark-io",
+    title: "AquaPark",
+    url: "https://devechox2.github.io/Geminal/games/aquaparkio.html",
+    tags: ["arcade", "sport"],
+    thumb: "aqua park"
   },
   {
     id: "basketball-stars",
