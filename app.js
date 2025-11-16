@@ -17,21 +17,21 @@ const GAMES = [
   {
     id: "basketball-stars",
     title: "Basketball Stars",
-    url: "https://devechox2.github.io/Geminal/basketballstars.html",
+    url: "https://devechox2.github.io/Geminal/games/basketballstars.html",
     tags: ["sport", "arcade"],
     thumb: "BBALL"
   },
   {
     id: "capybara-clicker",
     title: "Capybara Clicker",
-    url: "https://devechox2.github.io/Geminal/capybaraclicker.html",
+    url: "hhttps://devechox2.github.io/Geminal/games/capybaraclicker.html",
     tags: ["idle", "arcade"],
     thumb: "Capybara"
   },
   {
     id: "tetris",
     title: "Tetris",
-    url: "https://devechox2.github.io/Geminal/tetrisgba.html",
+    url: "https://devechox2.github.io/Geminal/games/tetrisgba.html",
     tags: ["puzzle", "retro"],
     thumb: "TETRIS"
   }
